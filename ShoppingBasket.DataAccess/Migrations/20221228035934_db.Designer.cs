@@ -12,8 +12,8 @@ using ShoppingBasket.DataAccess.Data;
 namespace ShoppingBasket.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221227022129_procatetodb")]
-    partial class procatetodb
+    [Migration("20221228035934_db")]
+    partial class db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

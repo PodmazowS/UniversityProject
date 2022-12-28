@@ -4,6 +4,7 @@ using UniversityProject.Models;
 
 namespace UniversityProject.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

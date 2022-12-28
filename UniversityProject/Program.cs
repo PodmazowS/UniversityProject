@@ -16,6 +16,7 @@ namespace UniversityProject
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -35,7 +36,7 @@ namespace UniversityProject
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }
