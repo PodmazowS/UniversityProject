@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ShoppingBasket.DataAccess.Data;
+using ShoppingBasket.DataAccess.Repositories;
 
 namespace UniversityProject
 {
@@ -15,6 +16,7 @@ namespace UniversityProject
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+            builder.Services.AddScoped<IAssignment, Assignment>();
 
 
             var app = builder.Build();

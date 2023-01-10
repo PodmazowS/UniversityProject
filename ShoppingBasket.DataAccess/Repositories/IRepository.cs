@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingBasket.DataAccess.Repositories
 {
-    internal interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll(Expression<Func<T, bool>>? predicate = null, string? includeProperties = null);
         T GetT(Expression<Func<T, bool>> predicate, string ? includeProperties = null);

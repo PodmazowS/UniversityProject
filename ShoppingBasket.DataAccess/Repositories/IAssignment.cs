@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingBasket.DataAccess.Repositories
 {
-    internal interface IAssignment
+    public interface IAssignment
     {
         IProductR Product { get; }
         ICategoryR Category { get; }
