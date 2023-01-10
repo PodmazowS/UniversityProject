@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33015.44
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityProject", "UniversityProject\UniversityProject.csproj", "{2D76FD39-7F2F-4809-B56E-37C25D6BE264}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityProject.Web", "UniversityProject\UniversityProject.Web.csproj", "{2D76FD39-7F2F-4809-B56E-37C25D6BE264}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Models", "ShoppingCart.Models\ShoppingBasket.Models.csproj", "{B5F795F4-10BA-4007-9DD6-FEF5A156E75C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Models", "ShoppingCart.Models\ShoppingBasket.Models.csproj", "{B5F795F4-10BA-4007-9DD6-FEF5A156E75C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Utility", "ShoppingCart.Utility\ShoppingBasket.Utility.csproj", "{ACC0E8BB-4289-467B-9888-6BAB35D189A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.Utility", "ShoppingCart.Utility\ShoppingBasket.Utility.csproj", "{ACC0E8BB-4289-467B-9888-6BAB35D189A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.DataAccess", "ShoppingBasket.DataAccess\ShoppingBasket.DataAccess.csproj", "{77FC6980-E0B7-4AD1-9423-284B58B4BEA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingBasket.DataAccess", "ShoppingBasket.DataAccess\ShoppingBasket.DataAccess.csproj", "{77FC6980-E0B7-4AD1-9423-284B58B4BEA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

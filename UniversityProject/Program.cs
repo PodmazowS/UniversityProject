@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ShoppingBasket.DataAccess.Data;
 using ShoppingBasket.DataAccess.Repositories;
 
-namespace UniversityProject
+namespace UniversityProject.Web
 {
     public class Program
     {

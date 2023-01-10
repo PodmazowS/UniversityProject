@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShoppingBasket.Models;
 using System.Diagnostics;
-using UniversityProject.Models;
 
-namespace UniversityProject.Controllers
+
+namespace UniversityProject.Web.Areas.Customer.Controllers
 {
     [Area("Customer")]
     public class HomeController : Controller
