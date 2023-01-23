@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - UniversityProject</title>
     <link rel="stylesheet" href="~/css/SandStone.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <link rel="stylesheet" href="~/UniversityProject.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -49,20 +49,7 @@
                         <a class="nav-link" asp-area="Admin" asp-action="Index" asp-controller="Category">Category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
+                        <a class="nav-link" asp-area="Admin" asp-action="Index" asp-controller="Products">Products</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -86,7 +73,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tiny.cloud/1/dwcz2z0f5shopwuia90puc2ou27h9pwpvay94yhsfarnymhz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

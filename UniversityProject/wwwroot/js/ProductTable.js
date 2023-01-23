@@ -1,9 +1,11 @@
 ﻿
 var dtable;
+
 $(document).ready(function () {
     dtable = $('#myTable').DataTable({
-        "ajax": {"url": "/Admin/Product/AllProducts"},
-        "columns": [
+        ajax: '/Admin/Product/AllProducts',
+        
+        columns: [
             { "data": "name" },
             { "data": 'description' },
             { "data": "price" },
@@ -48,7 +50,7 @@ function RemoveProduct(url) {
         }
     })
 }
-
+$.fn.dataTable.ext.errMode = 'throw';
 
 
 

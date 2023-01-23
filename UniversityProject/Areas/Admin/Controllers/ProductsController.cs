@@ -41,7 +41,7 @@ namespace UniversityProject.Web.Areas.Admin.Controllers
 
                 Categories = _assignment.Category.GetAll().Select(x => new SelectListItem
                 { Text = x.Name,
-                  Value = x.Id.ToString() 
+                    Value = x.Id.ToString()
                 })
             };
             if (id == null || id == 0)
@@ -75,10 +75,9 @@ namespace UniversityProject.Web.Areas.Admin.Controllers
                     fileName = Guid.NewGuid().ToString() + "-" + file.FileName;
                     string filePath = Path.Combine(uploadDir, fileName);
 
-                    using (var fileStream = new FileStream(filePath, FileMode.Create))
-                    {
-                        file.CopyTo(fileStream);
-                    }
+                    using var fileStream = new FileStream(filePath, FileMode.Create);
+                    file.CopyTo(fileStream);
+
                 }
                 if (pvm.Product.ImageUrl != null)
                 {
@@ -88,22 +87,29 @@ namespace UniversityProject.Web.Areas.Admin.Controllers
                         System.IO.File.Delete(oldImagePath);
                     }
                 }
-                pvm.Product.ImageUrl = @"\ProductImage\" + fileName;
-            }
-            if (pvm.Product.Id == 0)
-            {
-                _assignment.Product.Add(pvm.Product);
-                TempData["success"] = "Product Created Done!";
+                
 
+                pvm.Product.ImageUrl = @"\ProductImage\" + fileName;
+                if (pvm.Product.Id == 0)
+                {
+                    _assignment.Product.Add(pvm.Product);
+                    TempData["success"] = "Product Created Done!";
+
+                }
+                else
+                {
+                    _assignment.Product.Update(pvm.Product);
+                    TempData["success"] = "Product Update Done!";
+                }
+                _assignment.Save();
+                return RedirectToAction("Index");
             }
-            else
-            {
-                _assignment.Product.Update(pvm.Product);
-                TempData["success"] = "Product Update Done!";
-            }
-            _assignment.Save();
+           
             return RedirectToAction("Index");
         }
+        
+    
+
         #region DeleteAPICALL
         [HttpDelete]
         public IActionResult Delete(int? id)
