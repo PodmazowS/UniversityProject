@@ -3,7 +3,7 @@ var dtable;
 
 $(document).ready(function () {
     dtable = $('#myTable').DataTable({
-        ajax: '/Admin/Product/AllProducts',
+        ajax: '/Admin/Products/AllProducts',
         
         columns: [
             { "data": "name" },
@@ -14,8 +14,8 @@ $(document).ready(function () {
                 "data": "id",
                 "render": function (data) {
                     return `
-                            <a href="/Admin/Product/CreateUpdate?id=${data}"><i class="bi bi-pencil-square"></i></a>
-                     <a onclick=RemoveProduct("/Admin/Product/Delete/${data}")><i class="bi bi-trash"></i></a>       
+                            <a href="/Admin/Products/CreateUpdate?id=${data}"><i class="bi bi-pencil-square"></i></a>
+                     <a onclick=RemoveProduct("/Admin/Products/Delete/${data}")><i class="bi bi-trash"></i></a>       
 `
             }
                 }

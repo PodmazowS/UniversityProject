@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShoppingBasket.DataAccess.Repositories;
 using ShoppingBasket.Models;
 using System.Diagnostics;
 
@@ -9,15 +10,18 @@ namespace UniversityProject.Web.Areas.Customer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IAssignment _assignment;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IAssignment assignment)
         {
             _logger = logger;
+            _assignment = assignment;
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Product> products = _assignment.Product.GetAll(includeProperties: "Category");
+            return View(products);
         }
 
         public IActionResult Privacy()
