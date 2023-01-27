@@ -2,6 +2,7 @@
 using ShoppingBasket.DataAccess.Repositories;
 using ShoppingBasket.Models;
 using System.Diagnostics;
+using ShoppingBasket.DataAccess.ViewModels;
 
 
 namespace UniversityProject.Web.Areas.Customer.Controllers
@@ -22,6 +23,17 @@ namespace UniversityProject.Web.Areas.Customer.Controllers
         {
             IEnumerable<Product> products = _assignment.Product.GetAll(includeProperties: "Category");
             return View(products);
+        }
+        [HttpGet]
+        public IActionResult Details(int? productId)
+        {
+            Cart shoppingBasket = new Cart()
+            {
+                Product = _assignment.Product.GetT(x=>x.Id == productId, includeProperties: "Category"),
+                Count = 1,
+                ProductId = (int)productId
+            };
+            return View(shoppingBasket);
         }
 
         public IActionResult Privacy()
