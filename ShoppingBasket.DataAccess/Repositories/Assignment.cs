@@ -9,10 +9,10 @@ namespace ShoppingBasket.DataAccess.Repositories
 {
     public class Assignment : IAssignment
     {
-        private AppDbContext _context;
+        private ApplicationDbContext _context;
         public ICategoryR Category { get; private set; }
         public IProductR Product { get; private set; }
-        public Assignment(AppDbContext context)
+        public Assignment(ApplicationDbContext context)
         {
             _context = context;
             Category = new CategoryR(context);

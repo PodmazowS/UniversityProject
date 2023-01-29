@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using ShoppingBasket.DataAccess.Data;
 using ShoppingBasket.DataAccess.Repositories;
+using Microsoft.AspNetCore.Identity;
+using ShoppingBasket.DataAccess.Data;
+using ShoppingBasket.Utility.DbInitializer;
+using ShoppingBasket.Utility;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace UniversityProject.Web
 {
@@ -12,13 +16,20 @@ namespace UniversityProject.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AppDbContext>(options =>
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddScoped<IDbInitializer, DbInitializerRepo>();
+            builder.Services.AddScoped<IEmailSender, EmailSender>();
             builder.Services.AddScoped<IAssignment, Assignment>();
+           
 
 
+            builder.Services.AddRazorPages();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -33,14 +44,25 @@ namespace UniversityProject.Web
             app.UseStaticFiles();
 
             app.UseRouting();
+            dataSedding();
+                        app.UseAuthentication();;
 
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
+            app.MapRazorPages();
 
             app.Run();
+            void dataSedding()
+            {
+                using (var scope = app.Services.CreateScope())
+                {
+                    var DbInitalizer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+                    DbInitalizer.Initializer();
+                }
+            }
         }
     }
 }

@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using ShoppingBasket.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShoppingBasket.DataAccess.ViewModels
+namespace ShoppingBasket.Models
 {
     public class Cart
     {
@@ -15,7 +14,9 @@ namespace ShoppingBasket.DataAccess.ViewModels
         [ValidateNever]
         public Product Product { get; set; }
         [ValidateNever]
-        public AppUser AppUser { get; set; }
+        public string AppUserId { get; set; }
+        [ValidateNever]
+        public ApplicationUser AppUser { get; set; }
         public int Count { get; set; }
     }
 }

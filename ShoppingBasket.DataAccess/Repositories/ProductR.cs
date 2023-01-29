@@ -10,8 +10,8 @@ namespace ShoppingBasket.DataAccess.Repositories
 {
     public class ProductR : Repository<Product>, IProductR
     {
-        private AppDbContext _context;
-        public ProductR(AppDbContext context) : base(context)
+        private ApplicationDbContext _context;
+        public ProductR(ApplicationDbContext context) : base(context)
         {
             _context = context;
         }

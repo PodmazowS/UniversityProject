@@ -10,6 +10,7 @@ namespace ShoppingBasket.DataAccess.Repositories
     {
         IProductR Product { get; }
         ICategoryR Category { get; }
+
         void Save();
     }
 }

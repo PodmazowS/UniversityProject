@@ -10,8 +10,8 @@ namespace ShoppingBasket.DataAccess.Repositories
 {
     public class CategoryR : Repository<Category>, ICategoryR
     {
-        private AppDbContext _context;
-        public CategoryR(AppDbContext context) : base(context)
+        private ApplicationDbContext _context;
+        public CategoryR(ApplicationDbContext context) : base(context)
         {
             _context = context;
         }

@@ -11,7 +11,7 @@ using ShoppingBasket.DataAccess.Data;
 
 namespace ShoppingBasket.DataAccess.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20221228035934_db")]
     partial class db
     {
