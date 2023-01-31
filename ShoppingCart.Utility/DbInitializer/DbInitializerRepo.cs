@@ -53,7 +53,7 @@ namespace ShoppingBasket.Utility.DbInitializer
                     PostalCode = "333011"
 
                 }, "Admin@123").GetAwaiter().GetResult();
-                ApplicationUser user = _context.ApplicationUsers.FirstOrDefault(x => x.Email == "admin@gmail.com");
+                ApplicationUser user = _context.ApplicationUser.FirstOrDefault(x => x.Email == "admin@gmail.com");
                 _userManager.AddToRoleAsync(user, WebSiteRole.Role_Admin).GetAwaiter().GetResult();
             }
             return;

@@ -16,6 +16,8 @@ namespace UniversityProject.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddMvc().AddXmlDataContractSerializerFormatters();
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -26,6 +28,13 @@ namespace UniversityProject.Web
             builder.Services.AddScoped<IDbInitializer, DbInitializerRepo>();
             builder.Services.AddScoped<IEmailSender, EmailSender>();
             builder.Services.AddScoped<IAssignment, Assignment>();
+            builder.Services.AddScoped<ICartRepository, CartRepository>();
+            builder.Services.ConfigureApplicationCookie(option =>
+            {
+                option.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+                option.LoginPath = $"/Identity/Account/Login";
+                option.LogoutPath = $"/Identity/Account/Logout";
+            });
            
 
 

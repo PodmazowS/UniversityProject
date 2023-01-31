@@ -5,10 +5,17 @@ using ShoppingBasket.DataAccess.Data;
 using ShoppingBasket.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
+using System;
+using System.IO;
+
 
 namespace UniversityProject.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class ProductsController : Controller
     {
         private IAssignment _assignment;

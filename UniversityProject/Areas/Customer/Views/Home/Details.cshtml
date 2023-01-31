@@ -1,9 +1,9 @@
 ﻿@model ShoppingBasket.Models.Cart
-<h1>Product Details</h1>
+<h1>Tea Details</h1>
 <form method="post">
     <div class="row">
         <div class="col-4">
-            <img src="@Model.Product.ImageUrl" width="200" height="200" />
+            <img src="@Model.Product.ImageUrl" width="200" height="300" />
             <input type="hidden" asp-for="ProductId" />
 
         </div>
@@ -19,7 +19,7 @@
                     <span asp-validation-for="Count" class="text-danger"></span>
                 </div>
                 <div class="form-control">
-                    <button class="btn btn-success" asp-action="Index" asp-controller="Home">Back to List</button>
+                    <button class="btn btn-success" asp-area="customer"  asp-action="Index" asp-controller="home">Back to List</button>
                     <button type="submit" class="btn btn-dark">Add to Cart</button>
                 </div>
             </div>

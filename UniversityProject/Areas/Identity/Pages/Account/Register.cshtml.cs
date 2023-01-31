@@ -103,9 +103,9 @@ namespace UniversityProject.Web.Areas.Identity.Pages.Account
             public string Name { get; set; }
             [Required]
             public string PhoneNumber { get; set; }
-            public string? Adress { get; set; }
-            public string? City { get; set; }
-            public string? PostalCode { get; set; }
+            public string Adress { get; set; }
+            public string City { get; set; }
+            public string PostalCode { get; set; }
         }
 
 

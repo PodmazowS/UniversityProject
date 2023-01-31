@@ -36,34 +36,7 @@ namespace UniversityProject.Web.Areas.Customer.Controllers
             };
             return View(shoppingBasket);
         }
-        //[HttpPost]
-        //[Authorize]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Details(Cart cart)
-        //{
-        //    if(ModelState.IsValid)
-        //    {
-        //        var claimsIdentity = (ClaimsIdentity)User.Identity;
-        //        var claims = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-        //        cart.AppUserId = claims.Value;
-
-        //        var cartItem = _assignment.Cart.GetT(x => x.ProductId == cart.ProductId &&
-        //        x.AppUserId == claims.Value);
-        //        if (cartItem == null) {
-        //            _assignment.Cart.Add(cart);
-        //            _assignment.Save();
-        //            HttpContext.Session.SetInt32("SessionCart", _assignment
-        //                .Cart.GetAll(x => x.AppUserId == claims.Value).ToList().Count);
-        //        }
-        //        else
-        //        {
-        //            _assignment.Cart.IncrementCartItem(cartItem, cart.Count);
-        //            _assignment.Save();
-        //        }
-                
-        //    }
-        //    return RedirectToAction("Index");
-        //}
+        
 
 
         public IActionResult Privacy()

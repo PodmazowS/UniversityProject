@@ -13,11 +13,17 @@ namespace ShoppingBasket.DataAccess.Repositories
     {
         private readonly ApplicationDbContext _context;
         private DbSet<T> _dbSet;
+        private DbContext context;
 
         public Repository(ApplicationDbContext context)
         {
             _context = context;
             _dbSet = _context.Set<T>();
+        }
+
+        public Repository(DbContext context)
+        {
+            this.context = context;
         }
 
         public void Add(T entity)

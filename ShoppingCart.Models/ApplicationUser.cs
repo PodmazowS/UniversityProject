@@ -13,12 +13,20 @@ namespace ShoppingBasket.Models
     public class ApplicationUser : IdentityUser
     {
         [Required]
+        [MaxLength(100)]
         public string Name { get; set; }
+
         [Required]
+        [Phone]
         public string PhoneNumber { get; set; }
+
+        [MaxLength(50)]
         public string? Adress { get; set; }
+
+        [MaxLength(50)]
         public string? City { get; set; }
+
+        [MaxLength(10)]
         public string? PostalCode { get; set; }
-        
     }
 }
