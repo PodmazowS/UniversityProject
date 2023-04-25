@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShoppingBasket.DataAccess.Repositories;
-using ShoppingBasket.DataAccess.ViewModels;
-using ShoppingBasket.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using ShoppingBasket.DataAccess.Repositories;
+using ShoppingBasket.Models;
 
 namespace UniversityProject.Web.Api
 {
@@ -20,9 +19,8 @@ namespace UniversityProject.Web.Api
             _assignment = assignment;
             _environment = environment;
         }
-
         [HttpGet]
-        public IActionResult AllProducts()
+        IActionResult AllProducts()
         {
             var products = _assignment.Product.GetAll(includeProperties: "Category");
             return Ok(new { data = products });
